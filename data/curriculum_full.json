@@ -1,0 +1,1082 @@
+[
+  {
+    "id": "C001",
+    "skill": "counting",
+    "difficulty": 1,
+    "age_band": "5-6",
+    "stem_en": "How many goats?",
+    "stem_fr": "Combien de chèvres?",
+    "stem_kin": "Ihene zingahe?",
+    "visual": "goats_1",
+    "answer_int": 1,
+    "distractors": [
+      2,
+      0,
+      3
+    ],
+    "hint_en": "Count one by one.",
+    "hint_kin": "Bara kimwe kimwe."
+  },
+  {
+    "id": "C002",
+    "skill": "counting",
+    "difficulty": 1,
+    "age_band": "5-6",
+    "stem_en": "How many stars?",
+    "stem_fr": "Combien de étoiles?",
+    "stem_kin": "Inyenyeri zingahe?",
+    "visual": "stars_2",
+    "answer_int": 2,
+    "distractors": [
+      4,
+      3,
+      1
+    ],
+    "hint_en": "Count one by one.",
+    "hint_kin": "Bara kimwe kimwe."
+  },
+  {
+    "id": "C003",
+    "skill": "counting",
+    "difficulty": 1,
+    "age_band": "5-6",
+    "stem_en": "How many fish?",
+    "stem_fr": "Combien de poissons?",
+    "stem_kin": "Ifi zingahe?",
+    "visual": "fish_3",
+    "answer_int": 3,
+    "distractors": [
+      4,
+      5,
+      2
+    ],
+    "hint_en": "Count one by one.",
+    "hint_kin": "Bara kimwe kimwe."
+  },
+  {
+    "id": "C004",
+    "skill": "counting",
+    "difficulty": 1,
+    "age_band": "5-6",
+    "stem_en": "How many fingers?",
+    "stem_fr": "Combien de doigts?",
+    "stem_kin": "Intoki zingahe?",
+    "visual": "fingers_4",
+    "answer_int": 4,
+    "distractors": [
+      5,
+      6,
+      3
+    ],
+    "hint_en": "Count one by one.",
+    "hint_kin": "Bara kimwe kimwe."
+  },
+  {
+    "id": "C005",
+    "skill": "counting",
+    "difficulty": 2,
+    "age_band": "5-6",
+    "stem_en": "How many mangoes?",
+    "stem_fr": "Combien de mangues?",
+    "stem_kin": "Imyembe zingahe?",
+    "visual": "mangoes_5",
+    "answer_int": 5,
+    "distractors": [
+      6,
+      4,
+      7
+    ],
+    "hint_en": "Count one by one.",
+    "hint_kin": "Bara kimwe kimwe."
+  },
+  {
+    "id": "C006",
+    "skill": "counting",
+    "difficulty": 2,
+    "age_band": "5-6",
+    "stem_en": "How many apples?",
+    "stem_fr": "Combien de pommes?",
+    "stem_kin": "Pome zingahe?",
+    "visual": "apples_6",
+    "answer_int": 6,
+    "distractors": [
+      5,
+      7,
+      8
+    ],
+    "hint_en": "Count one by one.",
+    "hint_kin": "Bara kimwe kimwe."
+  },
+  {
+    "id": "C007",
+    "skill": "counting",
+    "difficulty": 2,
+    "age_band": "5-6",
+    "stem_en": "How many goats?",
+    "stem_fr": "Combien de chèvres?",
+    "stem_kin": "Ihene zingahe?",
+    "visual": "goats_7",
+    "answer_int": 7,
+    "distractors": [
+      8,
+      9,
+      6
+    ],
+    "hint_en": "Count one by one.",
+    "hint_kin": "Bara kimwe kimwe."
+  },
+  {
+    "id": "C008",
+    "skill": "counting",
+    "difficulty": 2,
+    "age_band": "5-6",
+    "stem_en": "How many stars?",
+    "stem_fr": "Combien de étoiles?",
+    "stem_kin": "Inyenyeri zingahe?",
+    "visual": "stars_8",
+    "answer_int": 8,
+    "distractors": [
+      9,
+      10,
+      7
+    ],
+    "hint_en": "Count one by one.",
+    "hint_kin": "Bara kimwe kimwe."
+  },
+  {
+    "id": "C009",
+    "skill": "counting",
+    "difficulty": 3,
+    "age_band": "6-7",
+    "stem_en": "How many fish?",
+    "stem_fr": "Combien de poissons?",
+    "stem_kin": "Ifi zingahe?",
+    "visual": "fish_9",
+    "answer_int": 9,
+    "distractors": [
+      10,
+      11,
+      8
+    ],
+    "hint_en": "Count one by one.",
+    "hint_kin": "Bara kimwe kimwe."
+  },
+  {
+    "id": "C010",
+    "skill": "counting",
+    "difficulty": 3,
+    "age_band": "6-7",
+    "stem_en": "How many fingers?",
+    "stem_fr": "Combien de doigts?",
+    "stem_kin": "Intoki zingahe?",
+    "visual": "fingers_10",
+    "answer_int": 10,
+    "distractors": [
+      11,
+      9,
+      12
+    ],
+    "hint_en": "Count one by one.",
+    "hint_kin": "Bara kimwe kimwe."
+  },
+  {
+    "id": "C011",
+    "skill": "counting",
+    "difficulty": 2,
+    "age_band": "5-6",
+    "stem_en": "Count the fingers. How many?",
+    "stem_fr": "Compte les doigts. Combien?",
+    "stem_kin": "Bara intoki. Zingahe?",
+    "visual": "fingers_2",
+    "answer_int": 2,
+    "distractors": [
+      1,
+      3,
+      4
+    ],
+    "hint_en": "Point at each one as you count.",
+    "hint_kin": "Tandika presi kuri buri kimwe."
+  },
+  {
+    "id": "C012",
+    "skill": "counting",
+    "difficulty": 2,
+    "age_band": "5-6",
+    "stem_en": "Count the mangoes. How many?",
+    "stem_fr": "Compte les mangues. Combien?",
+    "stem_kin": "Bara imyembe. Zingahe?",
+    "visual": "mangoes_7",
+    "answer_int": 7,
+    "distractors": [
+      9,
+      8,
+      6
+    ],
+    "hint_en": "Point at each one as you count.",
+    "hint_kin": "Tandika presi kuri buri kimwe."
+  },
+  {
+    "id": "N001",
+    "skill": "number_sense",
+    "difficulty": 4,
+    "age_band": "6-7",
+    "stem_en": "Which number is bigger: 4 or 7?",
+    "stem_fr": "Quel nombre est plus grand: 4 ou 7?",
+    "stem_kin": "Ni iyihe nimero nini: 4 cyangwa 7?",
+    "visual": "compare_4_7",
+    "answer_int": 7,
+    "distractors": [
+      6,
+      8,
+      9
+    ],
+    "hint_en": "The farther right on the number line, the bigger.",
+    "hint_kin": "Nimero nkuru iri iburyo bw'umurongo."
+  },
+  {
+    "id": "N002",
+    "skill": "number_sense",
+    "difficulty": 4,
+    "age_band": "6-7",
+    "stem_en": "Which number is bigger: 3 or 8?",
+    "stem_fr": "Quel nombre est plus grand: 3 ou 8?",
+    "stem_kin": "Ni iyihe nimero nini: 3 cyangwa 8?",
+    "visual": "compare_3_8",
+    "answer_int": 8,
+    "distractors": [
+      9,
+      10,
+      7
+    ],
+    "hint_en": "The farther right on the number line, the bigger.",
+    "hint_kin": "Nimero nkuru iri iburyo bw'umurongo."
+  },
+  {
+    "id": "N003",
+    "skill": "number_sense",
+    "difficulty": 5,
+    "age_band": "6-7",
+    "stem_en": "Which number is bigger: 5 or 9?",
+    "stem_fr": "Quel nombre est plus grand: 5 ou 9?",
+    "stem_kin": "Ni iyihe nimero nini: 5 cyangwa 9?",
+    "visual": "compare_5_9",
+    "answer_int": 9,
+    "distractors": [
+      8,
+      10,
+      11
+    ],
+    "hint_en": "The farther right on the number line, the bigger.",
+    "hint_kin": "Nimero nkuru iri iburyo bw'umurongo."
+  },
+  {
+    "id": "N004",
+    "skill": "number_sense",
+    "difficulty": 3,
+    "age_band": "6-7",
+    "stem_en": "Which number is bigger: 6 or 2?",
+    "stem_fr": "Quel nombre est plus grand: 6 ou 2?",
+    "stem_kin": "Ni iyihe nimero nini: 6 cyangwa 2?",
+    "visual": "compare_6_2",
+    "answer_int": 6,
+    "distractors": [
+      5,
+      8,
+      7
+    ],
+    "hint_en": "The farther right on the number line, the bigger.",
+    "hint_kin": "Nimero nkuru iri iburyo bw'umurongo."
+  },
+  {
+    "id": "N005",
+    "skill": "number_sense",
+    "difficulty": 5,
+    "age_band": "6-7",
+    "stem_en": "Which number is bigger: 10 or 7?",
+    "stem_fr": "Quel nombre est plus grand: 10 ou 7?",
+    "stem_kin": "Ni iyihe nimero nini: 10 cyangwa 7?",
+    "visual": "compare_10_7",
+    "answer_int": 10,
+    "distractors": [
+      11,
+      12,
+      9
+    ],
+    "hint_en": "The farther right on the number line, the bigger.",
+    "hint_kin": "Nimero nkuru iri iburyo bw'umurongo."
+  },
+  {
+    "id": "N006",
+    "skill": "number_sense",
+    "difficulty": 5,
+    "age_band": "6-7",
+    "stem_en": "Which number is bigger: 1 or 9?",
+    "stem_fr": "Quel nombre est plus grand: 1 ou 9?",
+    "stem_kin": "Ni iyihe nimero nini: 1 cyangwa 9?",
+    "visual": "compare_1_9",
+    "answer_int": 9,
+    "distractors": [
+      11,
+      8,
+      10
+    ],
+    "hint_en": "The farther right on the number line, the bigger.",
+    "hint_kin": "Nimero nkuru iri iburyo bw'umurongo."
+  },
+  {
+    "id": "N007",
+    "skill": "number_sense",
+    "difficulty": 7,
+    "age_band": "8-9",
+    "stem_en": "What number comes between 47 and 49?",
+    "stem_fr": "Quel nombre est entre 47 et 49?",
+    "stem_kin": "Ni iyihe nimero iri hagati ya 47 na 49?",
+    "visual": "numberline_47_49",
+    "answer_int": 48,
+    "distractors": [
+      52,
+      51,
+      20
+    ],
+    "hint_en": "Count up from the smaller number.",
+    "hint_kin": "Bara uhereye kuri nimero ntoya."
+  },
+  {
+    "id": "N008",
+    "skill": "number_sense",
+    "difficulty": 5,
+    "age_band": "7-8",
+    "stem_en": "What number comes between 14 and 16?",
+    "stem_fr": "Quel nombre est entre 14 et 16?",
+    "stem_kin": "Ni iyihe nimero iri hagati ya 14 na 16?",
+    "visual": "numberline_14_16",
+    "answer_int": 15,
+    "distractors": [
+      17,
+      16,
+      14
+    ],
+    "hint_en": "Count up from the smaller number.",
+    "hint_kin": "Bara uhereye kuri nimero ntoya."
+  },
+  {
+    "id": "N009",
+    "skill": "number_sense",
+    "difficulty": 7,
+    "age_band": "8-9",
+    "stem_en": "What number comes between 29 and 31?",
+    "stem_fr": "Quel nombre est entre 29 et 31?",
+    "stem_kin": "Ni iyihe nimero iri hagati ya 29 na 31?",
+    "visual": "numberline_29_31",
+    "answer_int": 30,
+    "distractors": [
+      20,
+      34,
+      33
+    ],
+    "hint_en": "Count up from the smaller number.",
+    "hint_kin": "Bara uhereye kuri nimero ntoya."
+  },
+  {
+    "id": "N010",
+    "skill": "number_sense",
+    "difficulty": 5,
+    "age_band": "7-8",
+    "stem_en": "What number comes between 8 and 10?",
+    "stem_fr": "Quel nombre est entre 8 et 10?",
+    "stem_kin": "Ni iyihe nimero iri hagati ya 8 na 10?",
+    "visual": "numberline_8_10",
+    "answer_int": 9,
+    "distractors": [
+      11,
+      10,
+      8
+    ],
+    "hint_en": "Count up from the smaller number.",
+    "hint_kin": "Bara uhereye kuri nimero ntoya."
+  },
+  {
+    "id": "N011",
+    "skill": "number_sense",
+    "difficulty": 6,
+    "age_band": "7-8",
+    "stem_en": "What number comes between 19 and 21?",
+    "stem_fr": "Quel nombre est entre 19 et 21?",
+    "stem_kin": "Ni iyihe nimero iri hagati ya 19 na 21?",
+    "visual": "numberline_19_21",
+    "answer_int": 20,
+    "distractors": [
+      23,
+      19,
+      24
+    ],
+    "hint_en": "Count up from the smaller number.",
+    "hint_kin": "Bara uhereye kuri nimero ntoya."
+  },
+  {
+    "id": "N012",
+    "skill": "number_sense",
+    "difficulty": 5,
+    "age_band": "7-8",
+    "stem_en": "What number comes between 5 and 7?",
+    "stem_fr": "Quel nombre est entre 5 et 7?",
+    "stem_kin": "Ni iyihe nimero iri hagati ya 5 na 7?",
+    "visual": "numberline_5_7",
+    "answer_int": 6,
+    "distractors": [
+      8,
+      5,
+      7
+    ],
+    "hint_en": "Count up from the smaller number.",
+    "hint_kin": "Bara uhereye kuri nimero ntoya."
+  },
+  {
+    "id": "A001",
+    "skill": "addition",
+    "difficulty": 3,
+    "age_band": "6-7",
+    "stem_en": "1 plus 1 equals?",
+    "stem_fr": "1 plus 1 égale?",
+    "stem_kin": "1 + 1 ni angahe?",
+    "visual": "beads_1_plus_1",
+    "answer_int": 2,
+    "distractors": [
+      1,
+      3,
+      4
+    ],
+    "hint_en": "Use the beads to count.",
+    "hint_kin": "Koresha urunigi kubara."
+  },
+  {
+    "id": "A002",
+    "skill": "addition",
+    "difficulty": 3,
+    "age_band": "6-7",
+    "stem_en": "2 plus 3 equals?",
+    "stem_fr": "2 plus 3 égale?",
+    "stem_kin": "2 + 3 ni angahe?",
+    "visual": "beads_2_plus_3",
+    "answer_int": 5,
+    "distractors": [
+      4,
+      6,
+      7
+    ],
+    "hint_en": "Use the beads to count.",
+    "hint_kin": "Koresha urunigi kubara."
+  },
+  {
+    "id": "A003",
+    "skill": "addition",
+    "difficulty": 3,
+    "age_band": "6-7",
+    "stem_en": "3 plus 4 equals?",
+    "stem_fr": "3 plus 4 égale?",
+    "stem_kin": "3 + 4 ni angahe?",
+    "visual": "beads_3_plus_4",
+    "answer_int": 7,
+    "distractors": [
+      8,
+      6,
+      9
+    ],
+    "hint_en": "Use the beads to count.",
+    "hint_kin": "Koresha urunigi kubara."
+  },
+  {
+    "id": "A004",
+    "skill": "addition",
+    "difficulty": 4,
+    "age_band": "6-7",
+    "stem_en": "4 plus 5 equals?",
+    "stem_fr": "4 plus 5 égale?",
+    "stem_kin": "4 + 5 ni angahe?",
+    "visual": "mangoes_4_plus_5",
+    "answer_int": 9,
+    "distractors": [
+      10,
+      8,
+      11
+    ],
+    "hint_en": "Use the mangoes to count.",
+    "hint_kin": "Koresha imyembe kubara."
+  },
+  {
+    "id": "A005",
+    "skill": "addition",
+    "difficulty": 4,
+    "age_band": "6-7",
+    "stem_en": "5 plus 4 equals?",
+    "stem_fr": "5 plus 4 égale?",
+    "stem_kin": "5 + 4 ni angahe?",
+    "visual": "mangoes_5_plus_4",
+    "answer_int": 9,
+    "distractors": [
+      10,
+      11,
+      8
+    ],
+    "hint_en": "Use the mangoes to count.",
+    "hint_kin": "Koresha imyembe kubara."
+  },
+  {
+    "id": "A006",
+    "skill": "addition",
+    "difficulty": 4,
+    "age_band": "6-7",
+    "stem_en": "6 plus 3 equals?",
+    "stem_fr": "6 plus 3 égale?",
+    "stem_kin": "6 + 3 ni angahe?",
+    "visual": "mangoes_6_plus_3",
+    "answer_int": 9,
+    "distractors": [
+      11,
+      8,
+      10
+    ],
+    "hint_en": "Use the mangoes to count.",
+    "hint_kin": "Koresha imyembe kubara."
+  },
+  {
+    "id": "A007",
+    "skill": "addition",
+    "difficulty": 5,
+    "age_band": "7-8",
+    "stem_en": "Sara has 4 mangoes and gets 5 more. How many now?",
+    "stem_fr": "Sara a 4 mangues et en reçoit 5 de plus. Combien maintenant?",
+    "stem_kin": "Sara afite imyembe 4 aronka indi 5. Afite ingahe ubu?",
+    "visual": "mangoes_4_plus_5",
+    "answer_int": 9,
+    "distractors": [
+      10,
+      11,
+      8
+    ],
+    "hint_en": "Add the ones first, then the tens.",
+    "hint_kin": "Banza wongere ibirwa, hanyuma amajana."
+  },
+  {
+    "id": "A008",
+    "skill": "addition",
+    "difficulty": 5,
+    "age_band": "7-8",
+    "stem_en": "Kalisa has 6 cows. He buys 3 more. How many cows?",
+    "stem_fr": "Kalisa a 6 vaches. Il en achète 3 de plus. Combien?",
+    "stem_kin": "Kalisa afite inka 6. Agura indi 3. Afite inka zingahe?",
+    "visual": "cows_6_plus_3",
+    "answer_int": 9,
+    "distractors": [
+      8,
+      11,
+      10
+    ],
+    "hint_en": "Add the ones first, then the tens.",
+    "hint_kin": "Banza wongere ibirwa, hanyuma amajana."
+  },
+  {
+    "id": "A009",
+    "skill": "addition",
+    "difficulty": 6,
+    "age_band": "7-8",
+    "stem_en": "There are 7 bananas in a basket. We add 8. Total?",
+    "stem_fr": "Il y a 7 bananes dans un panier. On en ajoute 8. Total?",
+    "stem_kin": "Hari ingizi 7 mu gitebo. Twongeraho 8. Hamwe ni zingahe?",
+    "visual": "bananas_7_plus_8",
+    "answer_int": 15,
+    "distractors": [
+      14,
+      17,
+      16
+    ],
+    "hint_en": "Add the ones first, then the tens.",
+    "hint_kin": "Banza wongere ibirwa, hanyuma amajana."
+  },
+  {
+    "id": "A010",
+    "skill": "addition",
+    "difficulty": 6,
+    "age_band": "7-8",
+    "stem_en": "Amina scored 8 points. She scores 9 more. Total?",
+    "stem_fr": "Amina a marqué 8 points. Elle en marque 9 de plus. Total?",
+    "stem_kin": "Amina yahawe amanota 8. Aronka andi 9. Hamwe ni angahe?",
+    "visual": "beads_8_plus_9",
+    "answer_int": 17,
+    "distractors": [
+      19,
+      18,
+      16
+    ],
+    "hint_en": "Add the ones first, then the tens.",
+    "hint_kin": "Banza wongere ibirwa, hanyuma amajana."
+  },
+  {
+    "id": "A011",
+    "skill": "addition",
+    "difficulty": 8,
+    "age_band": "8-9",
+    "stem_en": "27 + 14 equals?",
+    "stem_fr": "27 + 14 égale?",
+    "stem_kin": "27 + 14 ni angahe?",
+    "visual": "beads_27_plus_14",
+    "answer_int": 41,
+    "distractors": [
+      45,
+      20,
+      44
+    ],
+    "hint_en": "Add the ones first, then the tens.",
+    "hint_kin": "Banza wongere ibirwa, hanyuma amajana."
+  },
+  {
+    "id": "A012",
+    "skill": "addition",
+    "difficulty": 9,
+    "age_band": "8-9",
+    "stem_en": "36 + 25 equals?",
+    "stem_fr": "36 + 25 égale?",
+    "stem_kin": "36 + 25 ni angahe?",
+    "visual": "beads_36_plus_25",
+    "answer_int": 61,
+    "distractors": [
+      20,
+      64,
+      65
+    ],
+    "hint_en": "Add the ones first, then the tens.",
+    "hint_kin": "Banza wongere ibirwa, hanyuma amajana."
+  },
+  {
+    "id": "S001",
+    "skill": "subtraction",
+    "difficulty": 4,
+    "age_band": "7-8",
+    "stem_en": "8 minus 3 equals?",
+    "stem_fr": "8 moins 3 égale?",
+    "stem_kin": "8 - 3 ni angahe?",
+    "visual": "drums_8_minus_3",
+    "answer_int": 5,
+    "distractors": [
+      6,
+      4,
+      7
+    ],
+    "hint_en": "Count back from the bigger number.",
+    "hint_kin": "Subira uhereye kuri nimero nkuru."
+  },
+  {
+    "id": "S002",
+    "skill": "subtraction",
+    "difficulty": 5,
+    "age_band": "7-8",
+    "stem_en": "10 minus 4 equals?",
+    "stem_fr": "10 moins 4 égale?",
+    "stem_kin": "10 - 4 ni angahe?",
+    "visual": "drums_10_minus_4",
+    "answer_int": 6,
+    "distractors": [
+      7,
+      5,
+      8
+    ],
+    "hint_en": "Count back from the bigger number.",
+    "hint_kin": "Subira uhereye kuri nimero nkuru."
+  },
+  {
+    "id": "S003",
+    "skill": "subtraction",
+    "difficulty": 5,
+    "age_band": "7-8",
+    "stem_en": "9 minus 2 equals?",
+    "stem_fr": "9 moins 2 égale?",
+    "stem_kin": "9 - 2 ni angahe?",
+    "visual": "beans_9_minus_2",
+    "answer_int": 7,
+    "distractors": [
+      8,
+      6,
+      9
+    ],
+    "hint_en": "Count back from the bigger number.",
+    "hint_kin": "Subira uhereye kuri nimero nkuru."
+  },
+  {
+    "id": "S004",
+    "skill": "subtraction",
+    "difficulty": 4,
+    "age_band": "7-8",
+    "stem_en": "7 minus 5 equals?",
+    "stem_fr": "7 moins 5 égale?",
+    "stem_kin": "7 - 5 ni angahe?",
+    "visual": "beans_7_minus_5",
+    "answer_int": 2,
+    "distractors": [
+      4,
+      3,
+      1
+    ],
+    "hint_en": "Count back from the bigger number.",
+    "hint_kin": "Subira uhereye kuri nimero nkuru."
+  },
+  {
+    "id": "S005",
+    "skill": "subtraction",
+    "difficulty": 4,
+    "age_band": "7-8",
+    "stem_en": "6 minus 1 equals?",
+    "stem_fr": "6 moins 1 égale?",
+    "stem_kin": "6 - 1 ni angahe?",
+    "visual": "fingers_6_minus_1",
+    "answer_int": 5,
+    "distractors": [
+      4,
+      7,
+      6
+    ],
+    "hint_en": "Count back from the bigger number.",
+    "hint_kin": "Subira uhereye kuri nimero nkuru."
+  },
+  {
+    "id": "S006",
+    "skill": "subtraction",
+    "difficulty": 5,
+    "age_band": "7-8",
+    "stem_en": "10 minus 6 equals?",
+    "stem_fr": "10 moins 6 égale?",
+    "stem_kin": "10 - 6 ni angahe?",
+    "visual": "fingers_10_minus_6",
+    "answer_int": 4,
+    "distractors": [
+      5,
+      3,
+      6
+    ],
+    "hint_en": "Count back from the bigger number.",
+    "hint_kin": "Subira uhereye kuri nimero nkuru."
+  },
+  {
+    "id": "S007",
+    "skill": "subtraction",
+    "difficulty": 6,
+    "age_band": "7-8",
+    "stem_en": "A basket has 12 beans. You eat 7. How many remain?",
+    "stem_fr": "Un panier a 12 haricots. Tu en manges 7. Combien restent?",
+    "stem_kin": "Igitebo gifite ibishyimbo 12. Urya 7. Hisigaye zingahe?",
+    "visual": "beans_basket_12",
+    "answer_int": 5,
+    "distractors": [
+      4,
+      6,
+      7
+    ],
+    "hint_en": "Start from the big number and count down.",
+    "hint_kin": "Tangira kuri nimero nkuru usubire inyuma."
+  },
+  {
+    "id": "S008",
+    "skill": "subtraction",
+    "difficulty": 6,
+    "age_band": "7-8",
+    "stem_en": "There are 15 eggs. We sell 6. How many are left?",
+    "stem_fr": "Il y a 15 oeufs. On en vend 6. Combien restent?",
+    "stem_kin": "Hari amagi 15. Tugurisha 6. Hisigaye angahe?",
+    "visual": "eggs_15_minus_6",
+    "answer_int": 9,
+    "distractors": [
+      10,
+      11,
+      8
+    ],
+    "hint_en": "Start from the big number and count down.",
+    "hint_kin": "Tangira kuri nimero nkuru usubire inyuma."
+  },
+  {
+    "id": "S009",
+    "skill": "subtraction",
+    "difficulty": 7,
+    "age_band": "8-9",
+    "stem_en": "Mama has 20 mangoes at the market. She sells 13. How many left?",
+    "stem_fr": "Mama a 20 mangues au marche. Elle en vend 13. Combien restent?",
+    "stem_kin": "Mama afite imyembe 20 ku isoko. Agurisha 13. Hisigaye zingahe?",
+    "visual": "mangoes_market_20",
+    "answer_int": 7,
+    "distractors": [
+      9,
+      8,
+      6
+    ],
+    "hint_en": "Start from the big number and count down.",
+    "hint_kin": "Tangira kuri nimero nkuru usubire inyuma."
+  },
+  {
+    "id": "S010",
+    "skill": "subtraction",
+    "difficulty": 7,
+    "age_band": "8-9",
+    "stem_en": "A school has 18 chairs. 9 are taken away. How many remain?",
+    "stem_fr": "Une ecole a 18 chaises. 9 sont emportees. Combien restent?",
+    "stem_kin": "Ishuri rifite intebe 18. Batware 9. Hisigaye zingahe?",
+    "visual": "chairs_18_minus_9",
+    "answer_int": 9,
+    "distractors": [
+      8,
+      11,
+      10
+    ],
+    "hint_en": "Start from the big number and count down.",
+    "hint_kin": "Tangira kuri nimero nkuru usubire inyuma."
+  },
+  {
+    "id": "S011",
+    "skill": "subtraction",
+    "difficulty": 9,
+    "age_band": "8-9",
+    "stem_en": "62 - 28 equals?",
+    "stem_fr": "62 - 28 egale?",
+    "stem_kin": "62 - 28 ni angahe?",
+    "visual": "beads_62_minus_28",
+    "answer_int": 34,
+    "distractors": [
+      37,
+      38,
+      20
+    ],
+    "hint_en": "Start from the big number and count down.",
+    "hint_kin": "Tangira kuri nimero nkuru usubire inyuma."
+  },
+  {
+    "id": "S012",
+    "skill": "subtraction",
+    "difficulty": 8,
+    "age_band": "8-9",
+    "stem_en": "50 - 17 equals?",
+    "stem_fr": "50 - 17 egale?",
+    "stem_kin": "50 - 17 ni angahe?",
+    "visual": "beads_50_minus_17",
+    "answer_int": 33,
+    "distractors": [
+      20,
+      36,
+      37
+    ],
+    "hint_en": "Start from the big number and count down.",
+    "hint_kin": "Tangira kuri nimero nkuru usubire inyuma."
+  },
+  {
+    "id": "W001",
+    "skill": "word_problem",
+    "difficulty": 6,
+    "age_band": "8-9",
+    "stem_en": "Three children share 9 cookies equally. How many does each get?",
+    "stem_fr": "Trois enfants partagent 9 biscuits. Combien chacun recoit?",
+    "stem_kin": "Abana batatu basangiye bisikwi 9. Umwana wese aronka zingahe?",
+    "visual": "kids_3_cookies_9",
+    "answer_int": 3,
+    "distractors": [
+      5,
+      4,
+      2
+    ],
+    "hint_en": "Read the problem again and draw a picture.",
+    "hint_kin": "Soma ikibazo nanone ukore ishusho."
+  },
+  {
+    "id": "W002",
+    "skill": "word_problem",
+    "difficulty": 8,
+    "age_band": "8-9",
+    "stem_en": "A tomato costs 100 RWF. Mama has 850 RWF. How many can she buy?",
+    "stem_fr": "Une tomate coute 100 RWF. Mama a 850 RWF. Combien peut-elle en acheter?",
+    "stem_kin": "Inyanya imwe igura amafaranga 100. Mama afite 850 RWF. Agura zingahe?",
+    "visual": "rwf_850_tomato_100",
+    "answer_int": 8,
+    "distractors": [
+      7,
+      10,
+      9
+    ],
+    "hint_en": "Read the problem again and draw a picture.",
+    "hint_kin": "Soma ikibazo nanone ukore ishusho."
+  },
+  {
+    "id": "W003",
+    "skill": "word_problem",
+    "difficulty": 7,
+    "age_band": "8-9",
+    "stem_en": "A water tank holds 20 litres. 8 litres are used. How many are left?",
+    "stem_fr": "Un reservoir contient 20 litres. On utilise 8 litres. Combien reste-t-il?",
+    "stem_kin": "Ikidendezi gifite litiro 20. Bakoresheje litiro 8. Hisigaye zingahe?",
+    "visual": "water_tank_20",
+    "answer_int": 12,
+    "distractors": [
+      14,
+      13,
+      11
+    ],
+    "hint_en": "Read the problem again and draw a picture.",
+    "hint_kin": "Soma ikibazo nanone ukore ishusho."
+  },
+  {
+    "id": "W004",
+    "skill": "word_problem",
+    "difficulty": 8,
+    "age_band": "8-9",
+    "stem_en": "Mandazi costs 50 RWF each. Jean has 400 RWF. How many can he buy?",
+    "stem_fr": "Un mandazi coute 50 RWF. Jean a 400 RWF. Combien peut-il en acheter?",
+    "stem_kin": "Mandazi imwe igura amafaranga 50. Jean afite 400 RWF. Agura zingahe?",
+    "visual": "rwf_400_mandazi_50",
+    "answer_int": 8,
+    "distractors": [
+      9,
+      10,
+      7
+    ],
+    "hint_en": "Read the problem again and draw a picture.",
+    "hint_kin": "Soma ikibazo nanone ukore ishusho."
+  },
+  {
+    "id": "W005",
+    "skill": "word_problem",
+    "difficulty": 6,
+    "age_band": "7-8",
+    "stem_en": "5 birds sit on a tree. 3 more arrive. How many birds total?",
+    "stem_fr": "5 oiseaux sont sur un arbre. 3 autres arrivent. Combien au total?",
+    "stem_kin": "Inyoni 5 zirimo ku giti. Izindi 3 zaza. Hamwe ni zingahe?",
+    "visual": "birds_5_plus_3",
+    "answer_int": 8,
+    "distractors": [
+      7,
+      9,
+      10
+    ],
+    "hint_en": "Read the problem again and draw a picture.",
+    "hint_kin": "Soma ikibazo nanone ukore ishusho."
+  },
+  {
+    "id": "W006",
+    "skill": "word_problem",
+    "difficulty": 7,
+    "age_band": "8-9",
+    "stem_en": "A farmer plants 4 rows of 3 seeds each. How many seeds?",
+    "stem_fr": "Un agriculteur plante 4 rangees de 3 graines. Combien de graines?",
+    "stem_kin": "Umuhinzi ahinga imirongo 4 y'imbuto 3 buri murongo. Imbuto zingahe?",
+    "visual": "seeds_4_rows_3",
+    "answer_int": 12,
+    "distractors": [
+      11,
+      13,
+      14
+    ],
+    "hint_en": "Read the problem again and draw a picture.",
+    "hint_kin": "Soma ikibazo nanone ukore ishusho."
+  },
+  {
+    "id": "W007",
+    "skill": "word_problem",
+    "difficulty": 6,
+    "age_band": "7-8",
+    "stem_en": "There are 16 pupils. 7 are absent. How many are present?",
+    "stem_fr": "Il y a 16 eleves. 7 sont absents. Combien sont presents?",
+    "stem_kin": "Hari abanyeshuri 16. 7 ntibabaho. Bangahe bahari?",
+    "visual": "pupils_16_minus_7",
+    "answer_int": 9,
+    "distractors": [
+      8,
+      10,
+      11
+    ],
+    "hint_en": "Read the problem again and draw a picture.",
+    "hint_kin": "Soma ikibazo nanone ukore ishusho."
+  },
+  {
+    "id": "W008",
+    "skill": "word_problem",
+    "difficulty": 7,
+    "age_band": "8-9",
+    "stem_en": "Amina has 3 bags of 5 oranges. How many oranges total?",
+    "stem_fr": "Amina a 3 sacs de 5 oranges. Combien d'oranges au total?",
+    "stem_kin": "Amina afite amasaho 3 y'imbuma 5 buri saho. Imbuma zingahe?",
+    "visual": "oranges_3_bags_5",
+    "answer_int": 15,
+    "distractors": [
+      17,
+      14,
+      16
+    ],
+    "hint_en": "Read the problem again and draw a picture.",
+    "hint_kin": "Soma ikibazo nanone ukore ishusho."
+  },
+  {
+    "id": "W009",
+    "skill": "word_problem",
+    "difficulty": 9,
+    "age_band": "8-9",
+    "stem_en": "A school collects 250 RWF Monday and 310 RWF Tuesday. Total?",
+    "stem_fr": "L'ecole collecte 250 RWF lundi et 310 RWF mardi. Total?",
+    "stem_kin": "Ishuri rikoranye 250 RWF kuwa mbere na 310 RWF kuwa kabiri. Hamwe ni angahe?",
+    "visual": "rwf_250_plus_310",
+    "answer_int": 560,
+    "distractors": [
+      564,
+      563,
+      20
+    ],
+    "hint_en": "Read the problem again and draw a picture.",
+    "hint_kin": "Soma ikibazo nanone ukore ishusho."
+  },
+  {
+    "id": "W010",
+    "skill": "word_problem",
+    "difficulty": 6,
+    "age_band": "7-8",
+    "stem_en": "If you have 6 apples and give away 4, how many do you have?",
+    "stem_fr": "Si tu as 6 pommes et en donnes 4, combien en as-tu?",
+    "stem_kin": "Niba ufite pome 6 ukabyereka 4, usigaye na zingahe?",
+    "visual": "apples_6_minus_4",
+    "answer_int": 2,
+    "distractors": [
+      3,
+      4,
+      1
+    ],
+    "hint_en": "Read the problem again and draw a picture.",
+    "hint_kin": "Soma ikibazo nanone ukore ishusho."
+  },
+  {
+    "id": "W011",
+    "skill": "word_problem",
+    "difficulty": 7,
+    "age_band": "8-9",
+    "stem_en": "Two baskets have 8 eggs each. How many eggs in total?",
+    "stem_fr": "Deux paniers ont 8 oeufs chacun. Combien d'oeufs au total?",
+    "stem_kin": "Ibikoresho bibiri bifite amagi 8 buri kari. Amagi angahe hamwe?",
+    "visual": "eggs_2_baskets_8",
+    "answer_int": 16,
+    "distractors": [
+      17,
+      18,
+      15
+    ],
+    "hint_en": "Read the problem again and draw a picture.",
+    "hint_kin": "Soma ikibazo nanone ukore ishusho."
+  },
+  {
+    "id": "W012",
+    "skill": "word_problem",
+    "difficulty": 7,
+    "age_band": "8-9",
+    "stem_en": "A rope is 15 m long. We cut off 6 m. How long is it now?",
+    "stem_fr": "Une corde mesure 15 m. On coupe 6 m. Quelle est sa longueur maintenant?",
+    "stem_kin": "Intambo ifite metero 15. Twagabanyije metero 6. Ifite metero zingahe ubu?",
+    "visual": "rope_15_minus_6",
+    "answer_int": 9,
+    "distractors": [
+      10,
+      8,
+      11
+    ],
+    "hint_en": "Read the problem again and draw a picture.",
+    "hint_kin": "Soma ikibazo nanone ukore ishusho."
+  }
+]
