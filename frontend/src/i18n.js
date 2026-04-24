@@ -1,0 +1,30 @@
+export const LANGS = {
+  EN: {
+    code: 'EN', label: 'English', flag: '🇬🇧', welcome: 'Hello!', sub: 'Ready to learn math?',
+    start: "Let's Go!", choose: 'Who is learning today?', question: 'How many',
+    doYouSee: 'do you see?', correct: 'Amazing!', wrong: 'Try again!',
+    next: 'Next', keepGoing: 'Keep going!', yourScore: 'Your score',
+    skills: 'Skills', parentTitle: 'Weekly Report', parentSub: "Here's how your child is doing",
+    counting: 'Counting', addition: 'Addition', subtraction: 'Subtraction',
+    numberSense: 'Number Sense', wordProblems: 'Word Problems',
+    silence: 'Take your time…', tap: 'Tap your answer below', report: 'Parent Report',
+  },
+  FR: {
+    code: 'FR', label: 'Français', flag: '🇫🇷', welcome: 'Bonjour!', sub: 'Prêt à apprendre les maths?',
+    start: 'Allons-y!', choose: "Qui apprend aujourd'hui?", question: 'Combien de',
+    doYouSee: 'tu vois?', correct: 'Bravo!', wrong: 'Essaie encore!',
+    next: 'Suivant', keepGoing: 'Continue!', yourScore: 'Ton score',
+    skills: 'Compétences', parentTitle: 'Rapport hebdomadaire', parentSub: 'Voici les progrès de votre enfant',
+    counting: 'Compter', addition: 'Addition', subtraction: 'Soustraction',
+    numberSense: 'Sens des nombres', wordProblems: 'Problèmes', report: 'Rapport',
+  },
+  KIN: {
+    code: 'KIN', label: 'Kinyarwanda', flag: '🇷🇼', welcome: 'Muraho!', sub: 'Witeguye kwiga imibare?',
+    start: 'Reka Tugende!', choose: 'Ni nde wiga uyu munsi?', question: 'Ni angahe',
+    doYouSee: 'ubona?', correct: 'Byiza cyane!', wrong: 'Gerageza nanone!',
+    next: 'Komeza', keepGoing: 'Komeza!', yourScore: 'Amanota yawe',
+    skills: 'Ubumenyi', parentTitle: "Raporo y'icyumweru", parentSub: 'Uko umwana wawe akora',
+    counting: 'Kubara', addition: 'Gukurikirana', subtraction: 'Gukuramo',
+    numberSense: 'Kumva imibare', wordProblems: 'Ibibazo', report: 'Raporo',
+  },
+}
