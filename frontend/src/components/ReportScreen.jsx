@@ -8,6 +8,14 @@ const DAY_LABELS = {
   KIN: ['Mb', 'Ku', 'Ka', 'Ga', 'Ka', 'Ka', 'Ka'],
 }
 
+const SKILL_LABELS = {
+  EN:  { counting: 'Counting', number_sense: 'Number Sense', addition: 'Addition', subtraction: 'Subtraction', word_problem: 'Word Problems' },
+  FR:  { counting: 'Compter', number_sense: 'Sens des nombres', addition: 'Addition', subtraction: 'Soustraction', word_problem: 'Problèmes' },
+  KIN: { counting: 'Kubara', number_sense: 'Kumva imibare', addition: 'Gukurikirana', subtraction: 'Gukuramo', word_problem: 'Ibibazo' },
+}
+
+const SKILL_ICONS = { counting: '🔢', number_sense: '🧮', addition: '➕', subtraction: '➖', word_problem: '📖' }
+
 export default function ReportScreen({ lang, learner, onBack, api }) {
   const t = LANGS[lang]
   const [report, setReport] = useState(null)
@@ -31,8 +39,10 @@ export default function ReportScreen({ lang, learner, onBack, api }) {
   const sessions = report?.attendance_7d || [0, 0, 0, 0, 0, 0, 0]
   const days = DAY_LABELS[lang] || DAY_LABELS.EN
 
+  const skillLabels = SKILL_LABELS[lang] || SKILL_LABELS.EN
+
   const stats = [
-    { icon: '⭐', val: `${report?.total_stars || 0}`,        label: 'Stars' },
+    { icon: '⭐', val: `${report?.total_stars ?? 0}`,        label: 'Stars' },
     { icon: '📅', val: `${sessions.filter(Boolean).length}`, label: 'Days' },
     { icon: '📈', val: `${report?.overall_status || 'New'}`, label: 'Status' },
   ]
@@ -101,14 +111,21 @@ export default function ReportScreen({ lang, learner, onBack, api }) {
         <div className="card">
           <div style={{ fontSize: 17, fontWeight: 800, color: '#1E1A33', marginBottom: 18 }}>📊 {t.skills}</div>
           {report
-            ? Object.entries(report.skills || {}).map(([key, data]) => (
-                <ProgressBar
-                  key={key}
-                  label={t[key] || key}
-                  value={animIn ? data.mastery : 0}
-                  color={data.mastery > 0.7 ? 'oklch(72% 0.14 152)' : data.mastery > 0.4 ? 'oklch(84% 0.14 88)' : 'oklch(72% 0.14 30)'}
-                />
-              ))
+            ? Object.entries(report.skills || {}).map(([key, data]) => {
+                const mastery = typeof data === 'object' && data !== null
+                  ? (data.mastery ?? data.current ?? data.p_mastery ?? 0)
+                  : 0
+                const label = skillLabels[key] || key.replace(/_/g, ' ')
+                const icon = SKILL_ICONS[key] || '📚'
+                return (
+                  <ProgressBar
+                    key={key}
+                    label={`${icon} ${label}`}
+                    value={animIn ? mastery : 0}
+                    color={mastery > 0.7 ? 'oklch(72% 0.14 152)' : mastery > 0.4 ? 'oklch(84% 0.14 88)' : 'oklch(72% 0.14 30)'}
+                  />
+                )
+              })
             : <div style={{ color: '#8A85A5' }}>Loading skills...</div>
           }
         </div>

@@ -84,13 +84,22 @@ export default function ActivityScreen({ lang, learner, item, onAnswer, question
     let meta = item.visual_meta
 
     // Back-compat: old server returns {shape, count, layout} without a type field.
-    // Normalise to the typed format so the rest of the logic is uniform.
+    // The old rsplit parser broke compound visuals (e.g. "beans_9_minus_2" → count=2),
+    // so only trust the old count when the shape name contains no math keyword.
     if (meta && !meta.type) {
-      if (meta.count > 0) {
-        meta = { type: 'counting', shape: meta.shape, count: meta.count, layout: meta.layout ?? 'scatter' }
-      } else if (meta.a != null && meta.b != null) {
-        // Can't tell addition from subtraction without a type, fall back to image
-        meta = null
+      const shapeName = meta.shape ?? ''
+      const looksCompound = /minus|plus|basket|market|tank/.test(shapeName)
+      if (meta.count > 0 && !looksCompound) {
+        meta = { type: 'counting', shape: shapeName, count: meta.count, layout: meta.layout ?? 'scatter' }
+      } else {
+        // Old server can't give us reliable data for this visual — fall to number mode
+        // if we can extract a and b from the raw visual string, otherwise hide.
+        const raw = item.visual ?? ''
+        const mPlus  = raw.match(/(\d+)_plus_(\d+)/)
+        const mMinus = raw.match(/(\d+)_minus_(\d+)/)
+        if (mPlus)  meta = { type: 'addition',    shape: '', a: +mPlus[1],  b: +mPlus[2]  }
+        else if (mMinus) meta = { type: 'subtraction', shape: '', a: +mMinus[1], b: +mMinus[2] }
+        else        meta = null
       }
     }
 
@@ -175,6 +184,7 @@ export default function ActivityScreen({ lang, learner, item, onAnswer, question
 
   const canvasH = 210
   const stem = item[`stem_${lang.toLowerCase()}`] || item.stem_en
+  const showCanvas = visualMode === 'comparison' || visualMode === 'number' || animObjs.length > 0
 
   return (
     <div
@@ -212,58 +222,53 @@ export default function ActivityScreen({ lang, learner, item, onAnswer, question
       <div className="card" style={{ width: '100%', maxWidth: 560, marginBottom: 20, textAlign: 'center' }}>
         <div style={{ fontSize: 22, fontWeight: 700, color: '#8A85A5', marginBottom: 8 }}>{stem}</div>
 
-        <div style={{
-          position: 'relative', height: canvasH, width: '100%', background: 'oklch(96% 0.03 248)',
-          borderRadius: 16, overflow: 'hidden', margin: '0 auto',
-        }}>
-          {visualMode === 'comparison' ? (
-            <div style={{ display: 'flex', height: '100%', alignItems: 'center', justifyContent: 'space-around', padding: '0 30px' }}>
-              <div style={{ fontSize: 80, fontWeight: 900, color: '#1E1A33' }}>{item.visual_meta.a}</div>
-              <div style={{ fontSize: 28, fontWeight: 700, color: '#B0ABCC' }}>vs</div>
-              <div style={{ fontSize: 80, fontWeight: 900, color: '#1E1A33' }}>{item.visual_meta.b}</div>
-            </div>
-          ) : visualMode === 'number' ? (
-            <NumberExpr meta={item.visual_meta} />
-          ) : animObjs.length > 0 ? (
-            <>
-              {animObjs.map((pos, i) => (
-                <div
-                  key={i}
-                  style={{
-                    position: 'absolute', left: pos.x, top: pos.y,
-                    opacity: pos.dimmed ? 0.28 : (selected !== null ? 0.7 : 1),
-                    animation: `popIn 0.35s ${pos.delay}ms both ease-out`,
-                    filter: pos.dimmed ? 'grayscale(1)' : 'none',
-                  }}
-                >
-                  <ShapeIcon shape={pos.shape} color={COLORS.blue} size={50} />
-                </div>
-              ))}
-              {visualMode === 'addition' && (
-                <div style={{
-                  position: 'absolute', left: 221, top: 80,
-                  fontSize: 40, fontWeight: 900, color: COLORS.green,
-                  lineHeight: '50px', width: 48, textAlign: 'center',
-                  pointerEvents: 'none',
-                }}>+</div>
-              )}
-              {visualMode === 'subtraction' && (
-                <div style={{
-                  position: 'absolute', bottom: 8, right: 12,
-                  fontSize: 11, fontWeight: 700, color: COLORS.coral,
-                  pointerEvents: 'none',
-                }}>faded = taken away</div>
-              )}
-            </>
-          ) : (
-            <img
-              src={`${api.baseUrl}${item.visual_url || '/images/' + item.visual + '.png'}`}
-              style={{ height: '100%', width: '100%', objectFit: 'contain' }}
-              alt="Math problem"
-              onError={(e) => { e.target.style.display = 'none' }}
-            />
-          )}
-        </div>
+        {showCanvas && (
+          <div style={{
+            position: 'relative', height: canvasH, width: '100%', background: 'oklch(96% 0.03 248)',
+            borderRadius: 16, overflow: 'hidden', margin: '0 auto',
+          }}>
+            {visualMode === 'comparison' ? (
+              <div style={{ display: 'flex', height: '100%', alignItems: 'center', justifyContent: 'space-around', padding: '0 30px' }}>
+                <div style={{ fontSize: 80, fontWeight: 900, color: '#1E1A33' }}>{item.visual_meta.a}</div>
+                <div style={{ fontSize: 28, fontWeight: 700, color: '#B0ABCC' }}>vs</div>
+                <div style={{ fontSize: 80, fontWeight: 900, color: '#1E1A33' }}>{item.visual_meta.b}</div>
+              </div>
+            ) : visualMode === 'number' ? (
+              <NumberExpr meta={item.visual_meta} />
+            ) : (
+              <>
+                {animObjs.map((pos, i) => (
+                  <div
+                    key={i}
+                    style={{
+                      position: 'absolute', left: pos.x, top: pos.y,
+                      opacity: pos.dimmed ? 0.28 : (selected !== null ? 0.7 : 1),
+                      animation: `popIn 0.35s ${pos.delay}ms both ease-out`,
+                      filter: pos.dimmed ? 'grayscale(1)' : 'none',
+                    }}
+                  >
+                    <ShapeIcon shape={pos.shape} color={COLORS.blue} size={50} />
+                  </div>
+                ))}
+                {visualMode === 'addition' && (
+                  <div style={{
+                    position: 'absolute', left: 221, top: 80,
+                    fontSize: 40, fontWeight: 900, color: COLORS.green,
+                    lineHeight: '50px', width: 48, textAlign: 'center',
+                    pointerEvents: 'none',
+                  }}>+</div>
+                )}
+                {visualMode === 'subtraction' && (
+                  <div style={{
+                    position: 'absolute', bottom: 8, right: 12,
+                    fontSize: 11, fontWeight: 700, color: COLORS.coral,
+                    pointerEvents: 'none',
+                  }}>faded = taken away</div>
+                )}
+              </>
+            )}
+          </div>
+        )}
 
         <div style={{ fontSize: 15, color: '#B0ABCC', fontWeight: 600, marginTop: 12 }}>{t.tap}</div>
       </div>

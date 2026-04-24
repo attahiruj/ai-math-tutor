@@ -1,8 +1,6 @@
-from __future__ import annotations
 import re
-from typing import Literal, Optional
 
-# Token dictionaries per language
+# Token dictionaries per language (sets for O(1) lookup)
 _KIN_WORDS = {
     "rimwe",
     "kabiri",
@@ -144,17 +142,17 @@ for w in [
     _NUM_LANG[w] = "en"
 
 
-def _tokenize(text: str) -> list:
-    return re.findall(r"[a-zA-ZÀ-ÿ]+", text.lower())
+def _tokenize(text):
+    return re.findall(r"[a-zA-Z\x80-\xff]+", text.lower())
 
 
-def detect_language(text: str) -> Literal["kin", "fr", "en", "mix"]:
+def detect_language(text):
     tokens = _tokenize(text)
     if not tokens:
         return "en"
 
     counts = {"kin": 0, "fr": 0, "en": 0}
-    num_lang = None  # type: ignore[type-arg]
+    num_lang = None
 
     for tok in tokens:
         if tok in _KIN_WORDS:
@@ -173,7 +171,7 @@ def detect_language(text: str) -> Literal["kin", "fr", "en", "mix"]:
     if counts[dominant] == 0:
         dominant = "en"
 
-    kin_ratio = counts["kin"] / total
+    kin_ratio = counts["kin"] / total if total > 0 else 0
     if kin_ratio > 0.30:
         dominant = "kin"
 
@@ -184,7 +182,7 @@ def detect_language(text: str) -> Literal["kin", "fr", "en", "mix"]:
     return dominant
 
 
-def get_reply_config(detected: dict, session_lang: str) -> tuple:
+def get_reply_config(detected, session_lang):
     """Return (reply_lang, embed_num_lang).
 
     If mixed, mirror the dominant language and embed the secondary language
@@ -199,7 +197,7 @@ def get_reply_config(detected: dict, session_lang: str) -> tuple:
     return dom, None
 
 
-def detect_language_full(text: str) -> dict:
+def detect_language_full(text):
     """Extended detection returning {dominant, is_mixed, num_lang}."""
     tokens = _tokenize(text)
     if not tokens:
@@ -223,7 +221,7 @@ def detect_language_full(text: str) -> dict:
     if counts[dominant] == 0:
         dominant = "en"
 
-    kin_ratio = counts["kin"] / total
+    kin_ratio = counts["kin"] / total if total > 0 else 0
     if kin_ratio > 0.30:
         dominant = "kin"
 
@@ -233,7 +231,7 @@ def detect_language_full(text: str) -> dict:
     return {"dominant": dominant, "is_mixed": is_mixed, "num_lang": num_lang}
 
 
-def dominant_language(detected: str, session_lang: str) -> str:
+def dominant_language(detected, session_lang):
     """Return the language to reply in, given a detect_language() result."""
     if detected == "mix":
         return session_lang

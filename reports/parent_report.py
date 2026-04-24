@@ -26,19 +26,31 @@ def build_report_json(student_id: str, summary: dict, bkt_state: dict) -> dict:
 
     skills_out = {}
     for skill in ALL_SKILLS:
-        current = round(bkt_state.get(skill, {}).get("p_mastery", SKILL_PARAMS[skill]["p_init"]), 3)
+        mastery = round(bkt_state.get(skill, {}).get("p_mastery", SKILL_PARAMS[skill]["p_init"]), 3)
         p_init = SKILL_PARAMS[skill]["p_init"]
-        skills_out[skill] = {"current": current, "delta": round(current - p_init, 3)}
+        skills_out[skill] = {"mastery": mastery, "delta": round(mastery - p_init, 3)}
 
     overall = summary.get("overall_accuracy", 0.0)
     overall_arrow = "↑" if overall >= 0.7 else "→" if overall >= 0.4 else "↓"
-    best = max(ALL_SKILLS, key=lambda s: skills_out[s]["current"])
-    needs_help = min(ALL_SKILLS, key=lambda s: skills_out[s]["current"])
+    overall_status = "Great" if overall >= 0.7 else "Good" if overall >= 0.4 else "New"
+    best = max(ALL_SKILLS, key=lambda s: skills_out[s]["mastery"])
+    needs_help = min(ALL_SKILLS, key=lambda s: skills_out[s]["mastery"])
+
+    daily = summary.get("daily_attendance", [])
+    attendance_7d = [1 if d.get("total", 0) > 0 else 0 for d in daily]
+    while len(attendance_7d) < 7:
+        attendance_7d.append(0)
+
+    total_correct = sum(d.get("correct", 0) for d in daily)
+    total_stars = total_correct
 
     return {
         "learner_id": student_id,
         "week_starting": week_start,
         "sessions": sessions,
+        "attendance_7d": attendance_7d,
+        "total_stars": total_stars,
+        "overall_status": overall_status,
         "skills": skills_out,
         "icons_for_parent": [overall_arrow, SKILL_ICONS[best], SKILL_ICONS[needs_help]],
         "voiced_summary_audio": f"data/tts/report_{student_id}.wav",
