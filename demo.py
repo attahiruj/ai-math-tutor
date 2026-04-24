@@ -9,6 +9,8 @@ Usage:
     python demo.py
 """
 
+import os
+import tempfile
 import time
 
 import gradio as gr
@@ -16,6 +18,41 @@ import requests
 
 API = "http://localhost:8000"
 TIMEOUT = 10  # seconds
+
+# Keep track of temp files so we can clean them up
+_tmp_files: list[str] = []
+
+
+def _fetch_audio(url: str) -> str | None:
+    """Download audio from backend and save to a temp file; return path."""
+    if not url:
+        return None
+    try:
+        r = requests.get(url, timeout=TIMEOUT)
+        r.raise_for_status()
+        fd, path = tempfile.mkstemp(suffix=".wav")
+        with os.fdopen(fd, "wb") as f:
+            f.write(r.content)
+        _tmp_files.append(path)
+        return path
+    except Exception:
+        return None
+
+
+def _fetch_image(url: str) -> str | None:
+    """Download image from backend and save to a temp file; return path."""
+    if not url:
+        return None
+    try:
+        r = requests.get(url, timeout=TIMEOUT)
+        r.raise_for_status()
+        fd, path = tempfile.mkstemp(suffix=".png")
+        with os.fdopen(fd, "wb") as f:
+            f.write(r.content)
+        _tmp_files.append(path)
+        return path
+    except Exception:
+        return None
 
 
 def start_session(name, lang):
@@ -57,8 +94,8 @@ def get_next_item(student_id, session_id, lang):
             None,
             "",
             None,
+            None,
             "",
-            "No active session.",
             gr.update(visible=False),
             gr.update(visible=False),
         )
@@ -73,11 +110,13 @@ def get_next_item(student_id, session_id, lang):
         stem = item.get("stem_localized", "")
         item_id = item["id"]
         visual_url = item.get("visual_url", "")
-        if visual_url:
-            image_url = API + visual_url
-        else:
-            image_url = None
-        tts_url = API + "/tts/" + lang + "/" + item_id
+
+        # Download image to temp file so Gradio doesn't try to proxy localhost URL
+        image_path = _fetch_image(API + visual_url) if visual_url else None
+
+        # Download TTS audio to temp file
+        tts_path = _fetch_audio(API + "/tts/" + lang + "/" + item_id)
+
         # Tap choices
         answer = item.get("answer_int")
         distractors = item.get("distractors", [])
@@ -86,8 +125,8 @@ def get_next_item(student_id, session_id, lang):
         return (
             item_id,
             stem,
-            image_url,
-            tts_url,
+            image_path,
+            tts_path,
             "Question ready! Tap or speak your answer.",
             gr.update(visible=True),
             gr.update(visible=True, choices=[str(c) for c in choices], value=None),
@@ -97,7 +136,7 @@ def get_next_item(student_id, session_id, lang):
             None,
             "",
             None,
-            "",
+            None,
             "Error fetching item: {}".format(e),
             gr.update(visible=False),
             gr.update(visible=False),
@@ -107,7 +146,7 @@ def get_next_item(student_id, session_id, lang):
 def submit_voice(student_id, session_id, item_id, lang, audio):
     """Send voice recording to backend."""
     if not audio or not item_id:
-        return "No audio recorded.", "", gr.update(value=None)
+        return "No audio recorded.", None, gr.update(value=None)
     try:
         with open(audio, "rb") as f:
             files = {"audio": ("audio.wav", f, "audio/wav")}
@@ -129,28 +168,29 @@ def submit_voice(student_id, session_id, item_id, lang, audio):
         feedback = result.get("feedback_text", "")
         transcribed = result.get("transcribed", "")
         feedback_lang = result.get("detected_lang", lang)
-        feedback_tts = (
+        feedback_url = (
             API
             + "/tts/"
             + feedback_lang
             + "/speak?text="
             + requests.utils.quote(feedback)
         )
+        fb_path = _fetch_audio(feedback_url)
         outcome = "Correct!" if correct else "Not quite."
         details = "Transcribed: {}".format(transcribed)
         return (
             outcome + " " + feedback,
-            feedback_tts,
+            fb_path,
             gr.update(value=details),
         )
     except Exception as e:
-        return "Error: {}".format(e), "", gr.update(value="")
+        return "Error: {}".format(e), None, gr.update(value="")
 
 
 def submit_tap(student_id, session_id, item_id, lang, choice):
     """Submit a tap (numeric) answer."""
     if choice is None or not item_id:
-        return "Please select an answer.", "", gr.update(value="")
+        return "Please select an answer.", None, gr.update(value="")
     try:
         choice_int = int(choice)
         r = requests.post(
@@ -167,17 +207,18 @@ def submit_tap(student_id, session_id, item_id, lang, choice):
         result = r.json()
         correct = result.get("correct", False)
         feedback = result.get("feedback_text", "")
-        feedback_tts = (
+        feedback_url = (
             API + "/tts/" + lang + "/speak?text=" + requests.utils.quote(feedback)
         )
+        fb_path = _fetch_audio(feedback_url)
         outcome = "Correct!" if correct else "Not quite."
         return (
             outcome + " " + feedback,
-            feedback_tts,
+            fb_path,
             gr.update(value="You tapped: {}".format(choice)),
         )
     except Exception as e:
-        return "Error: {}".format(e), "", gr.update(value="")
+        return "Error: {}".format(e), None, gr.update(value="")
 
 
 def next_question(student_id, session_id, lang):
@@ -258,8 +299,8 @@ with gr.Blocks(
             (
                 item_id,
                 stem,
-                img_url,
-                tts_url,
+                img_path,
+                tts_path,
                 status,
                 show_voice,
                 show_tap,
@@ -272,8 +313,8 @@ with gr.Blocks(
                 msg,
                 gr.update(visible=True),
                 stem,
-                gr.update(value=img_url, visible=bool(img_url)),
-                gr.update(value=tts_url, visible=True),
+                gr.update(value=img_path, visible=bool(img_path)),
+                gr.update(value=tts_path, visible=bool(tts_path)),
                 status,
                 show_voice,
                 show_tap,
@@ -326,10 +367,10 @@ with gr.Blocks(
     )
 
     def on_voice_submit(sid, sess, item_id, lang, audio):
-        feedback, fb_audio, details = submit_voice(sid, sess, item_id, lang, audio)
+        feedback, fb_path, details = submit_voice(sid, sess, item_id, lang, audio)
         return (
             feedback,
-            gr.update(value=fb_audio, visible=bool(fb_audio)),
+            gr.update(value=fb_path, visible=bool(fb_path)),
             details,
             gr.update(visible=True),
         )
@@ -341,10 +382,10 @@ with gr.Blocks(
     )
 
     def on_tap_submit(sid, sess, item_id, lang, choice):
-        feedback, fb_audio, details = submit_tap(sid, sess, item_id, lang, choice)
+        feedback, fb_path, details = submit_tap(sid, sess, item_id, lang, choice)
         return (
             feedback,
-            gr.update(value=fb_audio, visible=bool(fb_audio)),
+            gr.update(value=fb_path, visible=bool(fb_path)),
             details,
             gr.update(visible=True),
         )
@@ -374,8 +415,8 @@ with gr.Blocks(
         (
             item_id,
             stem,
-            img_url,
-            tts_url,
+            img_path,
+            tts_path,
             status,
             show_voice,
             show_tap,
@@ -383,8 +424,8 @@ with gr.Blocks(
         return (
             item_id,
             stem,
-            gr.update(value=img_url, visible=bool(img_url)),
-            gr.update(value=tts_url, visible=True),
+            gr.update(value=img_path, visible=bool(img_path)),
+            gr.update(value=tts_path, visible=bool(tts_path)),
             status,
             show_voice,
             show_tap,
