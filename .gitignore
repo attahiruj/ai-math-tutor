@@ -4,7 +4,20 @@ __pycache__/
 build/
 dist/
 wheels/
-*.egg-info
+*.egg-info/
 
 # Virtual environments
-.venv
+.venv/
+
+# Models and data (large files)
+tutor/models/
+data/images/
+data/tts/
+*.onnx
+*.wav
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*~
